@@ -1,0 +1,310 @@
+; dlltool --output-def SGE.def sge_surface.o sge_primitives.o sge_tt_text.o sge_bm_text.o sge_misc.o sge_textpp.o sge_blib.o sge_rotation.o sge_collision.o sge_shape.o
+EXPORTS
+	UpdateRects__11sge_surface @ 1 ; sge_surface::UpdateRects(void)
+	_$_10sge_screen @ 2 ; sge_screen::~sge_screen(void)
+	_$_10sge_sprite @ 3 ; sge_sprite::~sge_sprite(void)
+	_$_11sge_ssprite @ 4 ; sge_ssprite::~sge_ssprite(void)
+	_$_11sge_surface @ 5 ; sge_surface::~sge_surface(void)
+	_$_14sge_TextEditor @ 6 ; sge_TextEditor::~sge_TextEditor(void)
+	_$_14sge_TextSprite @ 7 ; sge_TextSprite::~sge_TextSprite(void)
+	_$_15sge_TextSsprite @ 8 ; sge_TextSsprite::~sge_TextSsprite(void)
+	_$_15sge_TextSurface @ 9 ; sge_TextSurface::~sge_TextSurface(void)
+	_$_8sge_text @ 10 ; sge_text::~sge_text(void)
+	_PutPixel @ 11 ; 
+	_PutPixel16 @ 12 ; 
+	_PutPixel24 @ 13 ; 
+	_PutPixel32 @ 14 ; 
+	_PutPixel8 @ 15 ; 
+	_PutPixelAlpha @ 16 ; 
+	_PutPixelAlpha__FP11SDL_SurfacessUcUcUcUc @ 17 ; _PutPixelAlpha(SDL_Surface *, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	_PutPixelX @ 18 ; 
+	_PutPixel__FP11SDL_SurfacessUcUcUc @ 19 ; _PutPixel(SDL_Surface *, short, short, unsigned char, unsigned char, unsigned char)
+	__10sge_screenP11SDL_Surface @ 20 ; sge_screen::sge_screen(SDL_Surface *)
+	__10sge_spriteP11SDL_SurfaceT1P9sge_cdatass @ 21 ; sge_sprite::sge_sprite(SDL_Surface *, SDL_Surface *, sge_cdata *, short, short)
+	__10sge_spriteP11SDL_SurfaceT1ss @ 22 ; sge_sprite::sge_sprite(SDL_Surface *, SDL_Surface *, short, short)
+	__11sge_sspriteP11SDL_SurfaceT1P9sge_cdatass @ 23 ; sge_ssprite::sge_ssprite(SDL_Surface *, SDL_Surface *, sge_cdata *, short, short)
+	__11sge_sspriteP11SDL_SurfaceT1ss @ 24 ; sge_ssprite::sge_ssprite(SDL_Surface *, SDL_Surface *, short, short)
+	__11sge_surfaceP11SDL_SurfaceT1ss @ 25 ; sge_surface::sge_surface(SDL_Surface *, SDL_Surface *, short, short)
+	__14sge_TextEditor @ 26 ; sge_TextEditor::sge_TextEditor(void)
+	__14sge_TextSpriteP11SDL_SurfaceGt12basic_string3ZcZt18string_char_traits1ZcZt24__default_alloc_template2b0i0ss @ 27 ; sge_TextSprite::sge_TextSprite(SDL_Surface *, basic_string<char, string_char_traits<char>, __default_alloc_template<false, 0> >, short, short)
+	__14sge_TextSpriteP11SDL_Surfacess @ 28 ; sge_TextSprite::sge_TextSprite(SDL_Surface *, short, short)
+	__15sge_TextSspriteP11SDL_SurfaceGt12basic_string3ZcZt18string_char_traits1ZcZt24__default_alloc_template2b0i0ss @ 29 ; sge_TextSsprite::sge_TextSsprite(SDL_Surface *, basic_string<char, string_char_traits<char>, __default_alloc_template<false, 0> >, short, short)
+	__15sge_TextSspriteP11SDL_Surfacess @ 30 ; sge_TextSsprite::sge_TextSsprite(SDL_Surface *, short, short)
+	__15sge_TextSurfaceP11SDL_SurfaceGt12basic_string3ZcZt18string_char_traits1ZcZt24__default_alloc_template2b0i0ss @ 31 ; sge_TextSurface::sge_TextSurface(SDL_Surface *, basic_string<char, string_char_traits<char>, __default_alloc_template<false, 0> >, short, short)
+	__15sge_TextSurfaceP11SDL_Surfacess @ 32 ; sge_TextSurface::sge_TextSurface(SDL_Surface *, short, short)
+	__8sge_text @ 33 ; sge_text::sge_text(void)
+	_sge_bbcheck @ 34 ; 
+	_sge_cmcheck @ 35 ; 
+	_vt$10sge_sprite @ 36 DATA ; sge_sprite virtual table
+	_vt$11sge_ssprite @ 37 DATA ; sge_ssprite virtual table
+	_vt$11sge_surface @ 38 DATA ; sge_surface virtual table
+	_vt$14sge_TextEditor @ 39 DATA ; sge_TextEditor virtual table
+	_vt$14sge_TextSprite @ 40 DATA ; sge_TextSprite virtual table
+	_vt$14sge_TextSprite$10sge_sprite @ 41 DATA ; sge_TextSprite::sge_sprite virtual table
+	_vt$15sge_TextSsprite @ 42 DATA ; sge_TextSsprite virtual table
+	_vt$15sge_TextSsprite$11sge_ssprite @ 43 DATA ; sge_TextSsprite::sge_ssprite virtual table
+	_vt$15sge_TextSurface @ 44 DATA ; sge_TextSurface virtual table
+	_vt$15sge_TextSurface$11sge_surface @ 45 DATA ; sge_TextSurface::sge_surface virtual table
+	_vt$8sge_text @ 46 DATA ; sge_text virtual table
+	add_frame__11sge_sspriteP11SDL_Surface @ 47 ; sge_ssprite::add_frame(SDL_Surface *)
+	add_frame__11sge_sspriteP11SDL_SurfaceP9sge_cdata @ 48 ; sge_ssprite::add_frame(SDL_Surface *, sge_cdata *)
+	add_rect__10sge_screenG8SDL_Rect @ 49 ; sge_screen::add_rect(SDL_Rect)
+	add_rect__10sge_screenssUiUi @ 50 ; sge_screen::add_rect(short, short, unsigned int, unsigned int)
+	add_shape__10sge_screenP9sge_shape @ 51 ; sge_screen::add_shape(sge_shape *)
+	add_shape_p__10sge_screenP9sge_shape @ 52 ; sge_screen::add_shape_p(sge_shape *)
+	border_bounce__11sge_sspriteb @ 53 ; sge_ssprite::border_bounce(bool)
+	border_warp__11sge_sspriteb @ 54 ; sge_ssprite::border_warp(bool)
+	change_cursor__14sge_TextEditorUs @ 55 ; sge_TextEditor::change_cursor(unsigned short)
+	change_text__14sge_TextEditorGt12basic_string3ZcZt18string_char_traits1ZcZt24__default_alloc_template2b0i0 @ 56 ; sge_TextEditor::change_text(basic_string<char, string_char_traits<char>, __default_alloc_template<false, 0> >)
+	change_textf__14sge_TextEditorPCce @ 57 ; sge_TextEditor::change_textf(char const *,...)
+	change_uctext__14sge_TextEditorPUs @ 58 ; sge_TextEditor::change_uctext(unsigned short *)
+	check__14sge_TextEditorP9SDL_Event @ 59 ; sge_TextEditor::check(SDL_Event *)
+	check_border__10sge_sprite @ 60 ; sge_sprite::check_border(void)
+	check_border__11sge_ssprite @ 61 ; sge_ssprite::check_border(void)
+	check_border__11sge_surface @ 62 ; sge_surface::check_border(void)
+	check_warp__11sge_surface @ 63 ; sge_surface::check_warp(void)
+	clear__11sge_surfaceP11SDL_Surfacess @ 64 ; sge_surface::clear(SDL_Surface *, short, short)
+	clear__11sge_surfaceUi @ 65 ; sge_surface::clear(unsigned int)
+	clear_all__10sge_screen @ 66 ; sge_screen::clear_all(void)
+	clear_text__14sge_TextEditor @ 67 ; sge_TextEditor::clear_text(void)
+	draw__11sge_surface @ 68 ; sge_surface::draw(void)
+	draw__14sge_TextSprite @ 69 ; sge_TextSprite::draw(void)
+	draw__15sge_TextSsprite @ 70 ; sge_TextSsprite::draw(void)
+	draw__15sge_TextSurface @ 71 ; sge_TextSurface::draw(void)
+	first_frame__11sge_ssprite @ 72 ; sge_ssprite::first_frame(void)
+	get_PlayingMode__11sge_ssprite @ 73 ; sge_ssprite::get_PlayingMode(void)
+	get_bg__8sge_textP9SDL_Color @ 74 ; sge_text::get_bg(SDL_Color *)
+	get_cdata__11sge_ssprite @ 75 ; sge_ssprite::get_cdata(void)
+	get_chars__14sge_TextEditor @ 76 ; sge_TextEditor::get_chars(void)
+	get_color__8sge_textP9SDL_Color @ 77 ; sge_text::get_color(SDL_Color *)
+	get_fps__C10sge_sprite @ 78 ; sge_sprite::get_fps(void) const
+	get_frame__11sge_ssprite @ 79 ; sge_ssprite::get_frame(void)
+	get_img__C11sge_surface @ 80 ; sge_surface::get_img(void) const
+	get_list__11sge_ssprite @ 81 ; sge_ssprite::get_list(void)
+	get_string__14sge_TextEditorb @ 82 ; sge_TextEditor::get_string(bool)
+	get_textSurface__8sge_textb @ 83 ; sge_text::get_textSurface(bool)
+	get_ucstring__14sge_TextEditorb @ 84 ; sge_TextEditor::get_ucstring(bool)
+	get_warp__11sge_surfaceG8SDL_RectR8SDL_RectN32 @ 85 ; sge_surface::get_warp(SDL_Rect, SDL_Rect &, SDL_Rect &, SDL_Rect &, SDL_Rect &)
+	get_xpps__C10sge_sprite @ 86 ; sge_sprite::get_xpps(void) const
+	get_xvel__C11sge_ssprite @ 87 ; sge_ssprite::get_xvel(void) const
+	get_ypps__C10sge_sprite @ 88 ; sge_sprite::get_ypps(void) const
+	get_yvel__C11sge_ssprite @ 89 ; sge_ssprite::get_yvel(void) const
+	insert__14sge_TextEditorUs @ 90 ; sge_TextEditor::insert(unsigned short)
+	last_frame__11sge_ssprite @ 91 ; sge_ssprite::last_frame(void)
+	max_chars__14sge_TextEditorUi @ 92 ; sge_TextEditor::max_chars(unsigned int)
+	move__10sge_spritess @ 93 ; sge_sprite::move(short, short)
+	move__11sge_surfacess @ 94 ; sge_surface::move(short, short)
+	move_end__14sge_TextEditor @ 95 ; sge_TextEditor::move_end(void)
+	move_left__14sge_TextEditor @ 96 ; sge_TextEditor::move_left(void)
+	move_right__14sge_TextEditor @ 97 ; sge_TextEditor::move_right(void)
+	move_start__14sge_TextEditor @ 98 ; sge_TextEditor::move_start(void)
+	move_to__10sge_spritess @ 99 ; sge_sprite::move_to(short, short)
+	move_to__11sge_surfacess @ 100 ; sge_surface::move_to(short, short)
+	new_node__14sge_TextEditorPQ214sge_TextEditor4nodeT1Us @ 101 ; sge_TextEditor::new_node(sge_TextEditor::node *, sge_TextEditor::node *, unsigned short)
+	next_frame__11sge_ssprite @ 102 ; sge_ssprite::next_frame(void)
+	nswap__14sge_TextEditorPQ214sge_TextEditor4nodeT1 @ 103 ; sge_TextEditor::nswap(sge_TextEditor::node *, sge_TextEditor::node *)
+	pause__10sge_sprite @ 104 ; sge_sprite::pause(void)
+	prev_frame__11sge_ssprite @ 105 ; sge_ssprite::prev_frame(void)
+	remove_left__14sge_TextEditor @ 106 ; sge_TextEditor::remove_left(void)
+	remove_right__14sge_TextEditor @ 107 ; sge_TextEditor::remove_right(void)
+	remove_shape_p__10sge_screenP9sge_shape @ 108 ; sge_screen::remove_shape_p(sge_shape *)
+	render_text__8sge_textP11SDL_Surfacess @ 109 ; sge_text::render_text(SDL_Surface *, short, short)
+	reset_seq__11sge_ssprite @ 110 ; sge_ssprite::reset_seq(void)
+	set_alpha__8sge_textUc @ 111 ; sge_text::set_alpha(unsigned char)
+	set_bmFont__8sge_textP11sge_bmpFont @ 112 ; sge_text::set_bmFont(sge_bmpFont *)
+	set_border__11sge_surfaceG8SDL_Rect @ 113 ; sge_surface::set_border(SDL_Rect)
+	set_fps__10sge_sprites @ 114 ; sge_sprite::set_fps(short)
+	set_pps__10sge_spritess @ 115 ; sge_sprite::set_pps(short, short)
+	set_seq__11sge_sspriteiiQ211sge_ssprite12playing_mode @ 116 ; sge_ssprite::set_seq(int, int, sge_ssprite::playing_mode)
+	set_textSurface__14sge_TextSpriteP11SDL_Surface @ 117 ; sge_TextSprite::set_textSurface(SDL_Surface *)
+	set_textSurface__15sge_TextSspriteP11SDL_Surface @ 118 ; sge_TextSsprite::set_textSurface(SDL_Surface *)
+	set_textSurface__15sge_TextSurfaceP11SDL_Surface @ 119 ; sge_TextSurface::set_textSurface(SDL_Surface *)
+	set_textSurface__8sge_textP11SDL_Surface @ 120 ; sge_text::set_textSurface(SDL_Surface *)
+	set_vel__11sge_sspritess @ 121 ; sge_ssprite::set_vel(short, short)
+	set_xpps__10sge_sprites @ 122 ; sge_sprite::set_xpps(short)
+	set_xvel__11sge_ssprites @ 123 ; sge_ssprite::set_xvel(short)
+	set_ypps__10sge_sprites @ 124 ; sge_sprite::set_ypps(short)
+	set_yvel__11sge_ssprites @ 125 ; sge_ssprite::set_yvel(short)
+	sge_AABezier @ 126 ; 
+	sge_AABezierAlpha @ 127 ; 
+	sge_AABezierAlpha__FP11SDL_SurfacessssssssiUcUcUcUc @ 128 ; sge_AABezierAlpha(SDL_Surface *, short, short, short, short, short, short, short, short, int, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_AABezier__FP11SDL_SurfacessssssssiUcUcUc @ 129 ; sge_AABezier(SDL_Surface *, short, short, short, short, short, short, short, short, int, unsigned char, unsigned char, unsigned char)
+	sge_AACircle @ 130 ; 
+	sge_AACircleAlpha @ 131 ; 
+	sge_AACircleAlpha__FP11SDL_SurfacesssUcUcUcUc @ 132 ; sge_AACircleAlpha(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_AACircle__FP11SDL_SurfacesssUcUcUc @ 133 ; sge_AACircle(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_AAEllipse @ 134 ; 
+	sge_AAEllipseAlpha @ 135 ; 
+	sge_AAEllipseAlpha__FP11SDL_SurfacessssUcUcUcUc @ 136 ; sge_AAEllipseAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_AAEllipse__FP11SDL_SurfacessssUcUcUc @ 137 ; sge_AAEllipse(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_AAFadedPolygon @ 138 ; 
+	sge_AAFilledCircle @ 139 ; 
+	sge_AAFilledCircle__FP11SDL_SurfacesssUcUcUc @ 140 ; sge_AAFilledCircle(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_AAFilledEllipse @ 141 ; 
+	sge_AAFilledEllipse__FP11SDL_SurfacessssUcUcUc @ 142 ; sge_AAFilledEllipse(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_AAFilledPolygon @ 143 ; 
+	sge_AAFilledPolygon__FP11SDL_SurfaceUsPsT2UcUcUc @ 144 ; sge_AAFilledPolygon(SDL_Surface *, unsigned short, short *, short *, unsigned char, unsigned char, unsigned char)
+	sge_AALine @ 145 ; 
+	sge_AALineAlpha @ 146 ; 
+	sge_AALineAlpha__FP11SDL_SurfacessssUcUcUcUc @ 147 ; sge_AALineAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_AALine__FP11SDL_SurfacessssUcUcUc @ 148 ; sge_AALine(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_AATrigon @ 149 ; 
+	sge_AATrigonAlpha @ 150 ; 
+	sge_AATrigonAlpha__FP11SDL_SurfacessssssUcUcUcUc @ 151 ; sge_AATrigonAlpha(SDL_Surface *, short, short, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_AATrigon__FP11SDL_SurfacessssssUcUcUc @ 152 ; sge_AATrigon(SDL_Surface *, short, short, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_AAmcLine @ 153 ; 
+	sge_AAmcLineAlpha @ 154 ; 
+	sge_AlphaFader @ 155 ; 
+	sge_BF_CloseFont @ 156 ; 
+	sge_BF_CreateFont @ 157 ; 
+	sge_BF_GetHeight @ 158 ; 
+	sge_BF_GetWidth @ 159 ; 
+	sge_BF_OpenFont @ 160 ; 
+	sge_BF_SetAlpha @ 161 ; 
+	sge_BF_SetColor @ 162 ; 
+	sge_BF_TextSize @ 163 ; 
+	sge_BF_input @ 164 ; 
+	sge_BF_inputAlpha @ 165 ; 
+	sge_BF_inputAlpha_UNI @ 166 ; 
+	sge_BF_input_UNI @ 167 ; 
+	sge_BF_textout @ 168 ; 
+	sge_BF_textoutf @ 169 ; 
+	sge_Bezier @ 170 ; 
+	sge_BezierAlpha @ 171 ; 
+	sge_BezierAlpha__FP11SDL_SurfacessssssssiUcUcUcUc @ 172 ; sge_BezierAlpha(SDL_Surface *, short, short, short, short, short, short, short, short, int, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_Bezier__FP11SDL_SurfacessssssssiUcUcUc @ 173 ; sge_Bezier(SDL_Surface *, short, short, short, short, short, short, short, short, int, unsigned char, unsigned char, unsigned char)
+	sge_Blit @ 174 ; 
+	sge_BlitTransparent @ 175 ; 
+	sge_CalcYPitch @ 176 ; 
+	sge_CalibrateDelay @ 177 ; 
+	sge_Circle @ 178 ; 
+	sge_CircleAlpha @ 179 ; 
+	sge_CircleAlpha__FP11SDL_SurfacesssUcUcUcUc @ 180 ; sge_CircleAlpha(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_Circle__FP11SDL_SurfacesssUcUcUc @ 181 ; sge_Circle(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_ClearSurface @ 182 ; 
+	sge_ClearSurface__FP11SDL_SurfaceUcUcUc @ 183 ; sge_ClearSurface(SDL_Surface *, unsigned char, unsigned char, unsigned char)
+	sge_CreateAlphaSurface @ 184 ; 
+	sge_Delay @ 185 ; 
+	sge_DelayRes @ 186 ; 
+	sge_DoCircle @ 187 ; 
+	sge_DoCircle__FP11SDL_SurfacesssUcUcUcPFP11SDL_SurfacessUi_v @ 188 ; sge_DoCircle(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char, void (*)(SDL_Surface *, short, short, unsigned int))
+	sge_DoEllipse @ 189 ; 
+	sge_DoEllipse__FP11SDL_SurfacessssUcUcUcPFP11SDL_SurfacessUi_v @ 190 ; sge_DoEllipse(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, void (*)(SDL_Surface *, short, short, unsigned int))
+	sge_DoLine @ 191 ; 
+	sge_DoLine__FP11SDL_SurfacessssUcUcUcPFP11SDL_SurfacessUi_v @ 192 ; sge_DoLine(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, void (*)(SDL_Surface *, short, short, unsigned int))
+	sge_DomcLine @ 193 ; 
+	sge_Ellipse @ 194 ; 
+	sge_EllipseAlpha @ 195 ; 
+	sge_EllipseAlpha__FP11SDL_SurfacessssUcUcUcUc @ 196 ; sge_EllipseAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_Ellipse__FP11SDL_SurfacessssUcUcUc @ 197 ; sge_Ellipse(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_FadedLine @ 198 ; 
+	sge_FadedPolygon @ 199 ; 
+	sge_FadedPolygonAlpha @ 200 ; 
+	sge_FadedTrigon @ 201 ; 
+	sge_Fader @ 202 ; 
+	sge_FillPaletteEntry @ 203 ; 
+	sge_FilledCircle @ 204 ; 
+	sge_FilledCircleAlpha @ 205 ; 
+	sge_FilledCircleAlpha__FP11SDL_SurfacesssUcUcUcUc @ 206 ; sge_FilledCircleAlpha(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_FilledCircle__FP11SDL_SurfacesssUcUcUc @ 207 ; sge_FilledCircle(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_FilledEllipse @ 208 ; 
+	sge_FilledEllipseAlpha @ 209 ; 
+	sge_FilledEllipseAlpha__FP11SDL_SurfacessssUcUcUcUc @ 210 ; sge_FilledEllipseAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_FilledEllipse__FP11SDL_SurfacessssUcUcUc @ 211 ; sge_FilledEllipse(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_FilledPolygon @ 212 ; 
+	sge_FilledPolygonAlpha @ 213 ; 
+	sge_FilledPolygonAlpha__FP11SDL_SurfaceUsPsT2UcUcUcUc @ 214 ; sge_FilledPolygonAlpha(SDL_Surface *, unsigned short, short *, short *, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_FilledPolygon__FP11SDL_SurfaceUsPsT2UcUcUc @ 215 ; sge_FilledPolygon(SDL_Surface *, unsigned short, short *, short *, unsigned char, unsigned char, unsigned char)
+	sge_FilledRect @ 216 ; 
+	sge_FilledRectAlpha @ 217 ; 
+	sge_FilledRectAlpha__FP11SDL_SurfacessssUcUcUcUc @ 218 ; sge_FilledRectAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_FilledRect__FP11SDL_SurfacessssUcUcUc @ 219 ; sge_FilledRect(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_FilledTrigon @ 220 ; 
+	sge_FilledTrigonAlpha @ 221 ; 
+	sge_FilledTrigonAlpha__FP11SDL_SurfacessssssUcUcUcUc @ 222 ; sge_FilledTrigonAlpha(SDL_Surface *, short, short, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_FilledTrigon__FP11SDL_SurfacessssssUcUcUc @ 223 ; sge_FilledTrigon(SDL_Surface *, short, short, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_FloodFill @ 224 ; 
+	sge_FloodFill__FP11SDL_SurfacessUcUcUc @ 225 ; sge_FloodFill(SDL_Surface *, short, short, unsigned char, unsigned char, unsigned char)
+	sge_GetPixel @ 226 ; 
+	sge_GetRGB @ 227 ; 
+	sge_HLine @ 228 ; 
+	sge_HLineAlpha @ 229 ; 
+	sge_HLineAlpha__FP11SDL_SurfacesssUcUcUcUc @ 230 ; sge_HLineAlpha(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_HLine__FP11SDL_SurfacesssUcUcUc @ 231 ; sge_HLine(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_Latin1_Uni @ 232 ; 
+	sge_Line @ 233 ; 
+	sge_LineAlpha @ 234 ; 
+	sge_LineAlpha__FP11SDL_SurfacessssUcUcUcUc @ 235 ; sge_LineAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_Line__FP11SDL_SurfacessssUcUcUc @ 236 ; sge_Line(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_Lock_OFF @ 237 ; 
+	sge_Lock_ON @ 238 ; 
+	sge_MapAlpha @ 239 ; 
+	sge_PutPixel @ 240 ; 
+	sge_PutPixelAlpha @ 241 ; 
+	sge_PutPixelAlpha__FP11SDL_SurfacessUcUcUcUc @ 242 ; sge_PutPixelAlpha(SDL_Surface *, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_PutPixel__FP11SDL_SurfacessUcUcUc @ 243 ; sge_PutPixel(SDL_Surface *, short, short, unsigned char, unsigned char, unsigned char)
+	sge_Random @ 244 ; 
+	sge_Randomize @ 245 ; 
+	sge_Rect @ 246 ; 
+	sge_RectAlpha @ 247 ; 
+	sge_RectAlpha__FP11SDL_SurfacessssUcUcUcUc @ 248 ; sge_RectAlpha(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_Rect__FP11SDL_SurfacessssUcUcUc @ 249 ; sge_Rect(SDL_Surface *, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_SetError @ 250 ; 
+	sge_SetupBWPalette @ 251 ; 
+	sge_SetupRainbowPalette @ 252 ; 
+	sge_TexturedLine @ 253 ; 
+	sge_TexturedRect @ 254 ; 
+	sge_TexturedTrigon @ 255 ; 
+	sge_Trigon @ 256 ; 
+	sge_TrigonAlpha @ 257 ; 
+	sge_TrigonAlpha__FP11SDL_SurfacessssssUcUcUcUc @ 258 ; sge_TrigonAlpha(SDL_Surface *, short, short, short, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_Trigon__FP11SDL_SurfacessssssUcUcUc @ 259 ; sge_Trigon(SDL_Surface *, short, short, short, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_UpdateRect @ 260 ; 
+	sge_Update_OFF @ 261 ; 
+	sge_Update_ON @ 262 ; 
+	sge_VLine @ 263 ; 
+	sge_VLineAlpha @ 264 ; 
+	sge_VLineAlpha__FP11SDL_SurfacesssUcUcUcUc @ 265 ; sge_VLineAlpha(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char, unsigned char)
+	sge_VLine__FP11SDL_SurfacesssUcUcUc @ 266 ; sge_VLine(SDL_Surface *, short, short, short, unsigned char, unsigned char, unsigned char)
+	sge_bbcheck @ 267 ; 
+	sge_bbcheck_shape__FP9sge_shapeT0 @ 268 ; sge_bbcheck_shape(sge_shape *, sge_shape *)
+	sge_cmcheck @ 269 ; 
+	sge_copy_surface @ 270 ; 
+	sge_destroy_cmap @ 271 ; 
+	sge_getLock @ 272 ; 
+	sge_getUpdate @ 273 ; 
+	sge_get_cx @ 274 ; 
+	sge_get_cy @ 275 ; 
+	sge_make_cmap @ 276 ; 
+	sge_mcLine @ 277 ; 
+	sge_mcLineAlpha @ 278 ; 
+	sge_pPutPixel @ 279 ; 
+	sge_read_block16 @ 280 ; 
+	sge_read_block32 @ 281 ; 
+	sge_read_block8 @ 282 ; 
+	sge_rotate @ 283 ; 
+	sge_rotate_scaled @ 284 ; 
+	sge_rotate_scaled_surface @ 285 ; 
+	sge_rotate_surface @ 286 ; 
+	sge_rotate_xyscaled @ 287 ; 
+	sge_set_cdata @ 288 ; 
+	sge_text_input__FP15sge_TextSurfaceUc @ 289 ; sge_text_input(sge_TextSurface *, unsigned char)
+	sge_transform @ 290 ; 
+	sge_transform_surface @ 291 ; 
+	sge_unset_cdata @ 292 ; 
+	sge_write_block16 @ 293 ; 
+	sge_write_block32 @ 294 ; 
+	sge_write_block8 @ 295 ; 
+	show_cursor__8sge_textb @ 296 ; sge_text::show_cursor(bool)
+	skip_frame__11sge_sspritei @ 297 ; sge_ssprite::skip_frame(int)
+	update__10sge_screen @ 298 ; sge_screen::update(void)
+	update__10sge_sprite @ 299 ; sge_sprite::update(void)
+	update__10sge_spriteUi @ 300 ; sge_sprite::update(unsigned int)
+	update__11sge_ssprite @ 301 ; sge_ssprite::update(void)
+	update_textSurface__8sge_textb @ 302 ; sge_text::update_textSurface(bool)
+	use_BMrender__8sge_text @ 303 ; sge_text::use_BMrender(void)
+	use_TTrender__8sge_text @ 304 ; sge_text::use_TTrender(void)
+	warp_clear__11sge_surfaceP11SDL_Surfacess @ 305 ; sge_surface::warp_clear(SDL_Surface *, short, short)
+	warp_clear__11sge_surfaceUi @ 306 ; sge_surface::warp_clear(unsigned int)
+	warp_draw__11sge_surface @ 307 ; sge_surface::warp_draw(void)
+	warp_update__11sge_surfaceG8SDL_Rect @ 308 ; sge_surface::warp_update(SDL_Rect)
