@@ -4,6 +4,7 @@
 #include <list>
 #include "bullet.h"
 #include "bordee.h"
+#include "gamecolor.h"
 
 class Sprite;
 
@@ -22,6 +23,8 @@ public:
     int difficulty();
     bool collides_with(Bullet *b);
     virtual void hit_by(int damage);
+	GameColor getColor() { return _color; }
+	void setColor(GameColor c);
 
 protected:
     int _turret_x, _turret_y;
@@ -30,6 +33,7 @@ protected:
     int _killedTime;
     int _difficulty;
     int _life;
+	GameColor _color;
 };
 
 class RotatingEnemy : public Enemy
@@ -75,6 +79,13 @@ public:
 
 protected:
 	std::list<Bordee> _bordees;
+};
+
+class RandomColorTarget : public Enemy
+{
+public:
+    RandomColorTarget();
+    virtual void update();
 };
 
 /*

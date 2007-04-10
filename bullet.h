@@ -3,6 +3,7 @@
 
 #include <utility>
 #include "sprite.h"
+#include "gamecolor.h"
 
 class Bullet
 {
@@ -30,10 +31,10 @@ public:
     Laser(std::pair<int, int> position, float direction, float speed);
 };
 
-class BouletteRose : public Bullet
+class ColoredBullet : public Bullet
 {
 public:
-    BouletteRose(std::pair<int, int> position, float direction, float speed);
+    ColoredBullet(std::pair<int, int> position, float direction, float speed, GameColor c = None);
 };
 
 #endif

@@ -16,6 +16,7 @@
 #include "star.h"
 #include "enemy.h"
 #include "sm.h"
+#include "gamecolor.h"
 
 #ifdef main
 #undef main
@@ -52,11 +53,14 @@ int main(int argc, char *argv[])
     Timer fps;
     int hits = 0;
     SDL_Color textColor = {255, 255, 255};
-    Uint32 bgColor, fireColor;
+    Uint32 bgColor, laserYellow, laserLightblue, laserPurple;
     std::list<Star *> stars;
-    bool fireLaser = false, fireShot = false;
+    bool fireLaser = false, fireShot = false, fireBomb = false;
+	bool button1 = false, button2 = false, button3 = false;
     SDL_Rect fireRect;
     int destroyed = 0;
+	GameColor shotColor = None;
+	GameColor laserColor = None;
      
     if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
     { 
@@ -98,7 +102,9 @@ int main(int argc, char *argv[])
     starColor = SDL_MapRGB(screen->format, 0xAF, 0xAF, 0xAF);
     bgColor = SDL_MapRGB(screen->format, 0, 0, 0);
     hitboxColor = SDL_MapRGB(screen->format, 0, 0xFF, 0);
-    fireColor = SDL_MapRGB(screen->format, 0xFF, 0, 0);
+    laserYellow = SDL_MapRGB(screen->format, 0xFF, 0xFF, 0);
+    laserLightblue = SDL_MapRGB(screen->format, 0xFF, 0, 0xFF);
+    laserPurple = SDL_MapRGB(screen->format, 0, 0xFF, 0xFF);
     hitCount = TTF_RenderText_Solid(font, "Not hit yet!", textColor);
   
 	/*
@@ -114,10 +120,10 @@ int main(int argc, char *argv[])
 	*/
 	SilentEnemy *migi = new SilentEnemy();
 	migi->sprite().set_position(SCREEN_WIDTH - 60, 40);
-	enemies.push_back(migi);
+	//enemies.push_back(migi);
 	SilentEnemy *hidari = new SilentEnemy();
 	hidari->sprite().set_position(30, 40);
-	enemies.push_back(hidari);
+	//enemies.push_back(hidari);
 
     if (Mix_PlayingMusic() == 0)
     { 
@@ -215,15 +221,18 @@ int main(int argc, char *argv[])
                             Mix_PauseMusic();
                         }
                         break;
-                    case SDLK_s:
+                    case SDLK_l:
                         sound = !sound;
                         break;
-                    case SDLK_SPACE:
-                        fireLaser = true;
+                    case SDLK_s:
+                        button1 = true;
                         break;
-                    case SDLK_x:
-                        fireShot = true;
+                    case SDLK_d:
+                        button2 = true;
                         break;
+					case SDLK_f:
+						button3 = true;
+						break;
                 }                         
             }
             else if (event.type == SDL_KEYUP)
@@ -242,12 +251,15 @@ int main(int argc, char *argv[])
                     case SDLK_RIGHT:
                         move_right = false;
                         break;
-                    case SDLK_SPACE:
-                        fireLaser = false;
+                    case SDLK_s:
+                        button1 = false;
                         break;
-                    case SDLK_x:
-                        fireShot = false;
+                    case SDLK_d:
+                        button2 = false;
                         break;
+					case SDLK_f:
+						button3 = false;
+						break;
                 }                         
             }
             else if (event.type == SDL_QUIT)
@@ -255,6 +267,60 @@ int main(int argc, char *argv[])
                 quit = true;
             }
         }
+		if (button1 && button2 && button3)
+		{
+			fireShot = false;
+			fireLaser = false;
+			fireBomb = true;
+		}
+		else if (button1 && button2)
+		{
+			fireShot = false;
+			fireLaser = true;
+			laserColor = Yellow;
+			fireBomb = false;
+		}
+		else if (button1 && button3)
+		{
+			fireShot = false;
+			fireLaser = true;
+			laserColor = Purple;
+			fireBomb = false;
+		}
+		else if (button2 && button3)
+		{
+			fireShot = false;
+			fireLaser = true;
+			laserColor = Lightblue;
+			fireBomb = false;
+		}
+		else if (button1)
+		{
+			fireShot = true;
+			shotColor = Red;
+			fireLaser = false;
+			fireBomb = false;
+		}
+		else if (button2)
+		{
+			fireShot = true;
+			shotColor = Green;
+			fireLaser = false;
+			fireBomb = false;
+		}
+		else if (button3)
+		{
+			fireShot = true;
+			shotColor = Blue;
+			fireLaser = false;
+			fireBomb = false;
+		}
+		else
+		{
+			fireShot = false;
+			fireLaser = false;
+			fireBomb = false;
+		}
                 
         SDL_FillRect(screen, NULL, bgColor);
         for (std::list<Star *>::iterator i = stars.begin(); i != stars.end(); i++)
@@ -293,32 +359,31 @@ int main(int argc, char *argv[])
         vaisseau->set_speed(sx, sy);
         vaisseau->update_position();
         vaisseau->display(screen);
-        if (fireLaser)
-        {
-            fireRect.x = vaisseau->position().x - 5 + vaisseau->position().w / 2;
-            fireRect.y = 0;
-            fireRect.w = 10;
-            fireRect.h = vaisseau->position().y;
-        }
-        if (fireShot)
-        {
-            Bullet *b1 = new Laser(Sprite::center(vaisseau->position()), (float)M_PI + (float)M_PI_2, 20.0f);
-            Bullet *b2 = new Laser(Sprite::center(vaisseau->position()), (float)M_PI + (float)M_PI_2 + 0.1f, 20.0f);
-            Bullet *b3 = new Laser(Sprite::center(vaisseau->position()), (float)M_PI + (float)M_PI_2 - 0.1f, 20.0f);
-            myBullets.push_back(b1);
-            myBullets.push_back(b2);
-            myBullets.push_back(b3);
-            fireShot = false;
-        }
+
+		if (fireLaser)
+		{
+			fireRect.x = vaisseau->position().x - 5 + vaisseau->position().w / 2;
+			fireRect.y = 0;
+			fireRect.w = 10;
+			fireRect.h = vaisseau->position().y;
+		}
 
         if (destroyed == 28)
         {
             destroyed = 0;
             Enemy *e = new RotatingEnemy();
             e->sprite().set_position(rand() % 380 + 50, -20);
-            e->sprite().set_speed(0.0, 2.0);
+            e->sprite().set_speed(0.0f, 2.0f);
             enemies.push_back(e);
         }
+
+		if ((frame % 120) == 0)
+		{
+			Enemy *e = new RandomColorTarget();
+            e->sprite().set_position(rand() % 140 + 50, -20);
+            e->sprite().set_speed(0.0f, 0.8f);
+            enemies.push_back(e);
+		}
 
         Enemy *hitByLaser = NULL;
         std::list<Enemy *>::iterator j = enemies.begin();
@@ -352,7 +417,20 @@ int main(int argc, char *argv[])
         }
         if (fireLaser)
         {
-            SDL_FillRect(screen, &fireRect, fireColor);
+			Uint32 c = 0;
+			if (laserColor == Yellow)
+			{
+				c = laserYellow;
+			}
+			else if (laserColor == Lightblue)
+			{
+				c = laserLightblue;
+			}
+			else
+			{
+				c = laserPurple;
+			}
+            SDL_FillRect(screen, &fireRect, c);
             if (hitByLaser != NULL)
             {
                 hitByLaser->hit_by(LASER_STRENGTH);
@@ -411,7 +489,7 @@ int main(int argc, char *argv[])
                 }
             }
         }
-        Sprite::apply_surface(320, 20, hitCount, screen);
+        Sprite::apply_surface(5, 40, hitCount, screen);
 
         std::list<Bullet *>::iterator k = myBullets.begin();
         while (k != myBullets.end())
@@ -468,6 +546,23 @@ int main(int argc, char *argv[])
 		{
 			if (arrows.front().column == LEFT_A)
 			{
+				// laser
+			}
+			else if (arrows.front().column == UP_A)
+			{
+				if (fireShot)
+				{
+					Bullet *b1 = new ColoredBullet(Sprite::center(vaisseau->position()), (float)M_PI + (float)M_PI_2, 20.0f, shotColor);
+					Bullet *b2 = new ColoredBullet(Sprite::center(vaisseau->position()), (float)M_PI + (float)M_PI_2 + 0.1f, 20.0f, shotColor);
+					Bullet *b3 = new ColoredBullet(Sprite::center(vaisseau->position()), (float)M_PI + (float)M_PI_2 - 0.1f, 20.0f, shotColor);
+					myBullets.push_back(b1);
+					myBullets.push_back(b2);
+					myBullets.push_back(b3);
+				}			
+			}
+			/*
+			if (arrows.front().column == LEFT_A)
+			{
 				hidari->fire_bordee_at(vaisseau->position().x + vaisseau->position().w / 2, vaisseau->position().y + vaisseau->position().h / 2, 20.0f, 0.0f, 0, 40);
 			}
 			else if (arrows.front().column == RIGHT_A)
@@ -498,6 +593,7 @@ int main(int argc, char *argv[])
 				migi->fire_bordee_at(vaisseau->position().x + vaisseau->position().w / 2, vaisseau->position().y + vaisseau->position().h / 2, 20.0f, -0.3f, 0, 40);
 				migi->fire_bordee_at(vaisseau->position().x + vaisseau->position().w / 2, vaisseau->position().y + vaisseau->position().h / 2, 20.0f, -0.4f, 0, 40);
 			}
+			*/
 			arrows.pop_front();
 		}
 
@@ -523,7 +619,7 @@ int main(int argc, char *argv[])
         std::string frameTxt = "Frame #" + nbFrame;
         SDL_FreeSurface(message);
         message = TTF_RenderText_Solid(font, frameTxt.c_str(), textColor);
-        Sprite::apply_surface(20, 20, message, screen);
+        Sprite::apply_surface(5, 5, message, screen);
         SDL_Flip(screen);
         frame++;
 

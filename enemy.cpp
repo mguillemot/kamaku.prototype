@@ -18,6 +18,7 @@ Enemy::Enemy()
     _killed = false;
     _killedTime = 0;
     _life = 100;
+	_color = None;
 }
 
 RotatingEnemy::RotatingEnemy()
@@ -33,6 +34,44 @@ RotatingEnemy::RotatingEnemy()
 Enemy::~Enemy()
 {
     delete _sprite;
+}
+
+void Enemy::setColor(GameColor c)
+{
+	_color = c;
+	switch (c)
+	{
+	case None:
+		_sprite = new Sprite("ennemi.bmp");
+		break;
+	case Red:
+		_sprite = new Sprite("ennemi_rouge.bmp");
+		break;
+	case Green:
+		_sprite = new Sprite("ennemi_vert.bmp");
+		break;
+	case Blue:
+		_sprite = new Sprite("ennemi_bleu.bmp");
+		break;
+	case Yellow:
+		_sprite = new Sprite("ennemi_jaune.bmp");
+		break;
+	case Purple:
+		_sprite = new Sprite("ennemi_violet.bmp");
+		break;
+	case Lightblue:
+		_sprite = new Sprite("ennemi_bleuciel.bmp");
+		break;
+	case Black:
+		_sprite = new Sprite("ennemi_noir.bmp");
+		break;
+	case White:
+		_sprite = new Sprite("ennemi_blanc.bmp");
+		break;
+	}
+    SDL_Rect hitbox = {4, 13, 30, 15};
+    _sprite->add_status("ennemi_exploding.bmp");
+    _sprite->set_hitbox(hitbox);
 }
 
 void RotatingEnemy::update()
@@ -119,7 +158,7 @@ Bullet *Enemy::fire_at(int x, int y, float speed, float shift_angle, int bulletT
     Bullet *shot;
     if (bulletType == 0)
     {
-        shot = new BouletteRose(std::make_pair<int, int>(from_x, from_y), angle, speed);
+        shot = new ColoredBullet(std::make_pair<int, int>(from_x, from_y), angle, speed);
     }
     else
     {
@@ -326,4 +365,46 @@ void SilentEnemy::update()
 			b++;
 		}
 	}
+}
+
+RandomColorTarget::RandomColorTarget()
+{
+	int r = rand() % 100;
+	if (r < 20)
+	{
+		setColor(Red);
+	}
+	else if (r < 40)
+	{
+		setColor(Green);
+	}
+	else if (r < 60)
+	{
+		setColor(Blue);
+	}
+	else if (r < 70)
+	{
+		setColor(Yellow);
+	}
+	else if (r < 80)
+	{
+		setColor(Purple);
+	}
+	else if (r < 90)
+	{
+		setColor(Lightblue);
+	}
+	else if (r < 95)
+	{
+		setColor(White);
+	}
+	else
+	{
+		setColor(Black);
+	}
+}
+
+void RandomColorTarget::update()
+{
+	Enemy::update();
 }

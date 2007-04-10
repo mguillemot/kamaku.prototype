@@ -65,9 +65,23 @@ Laser::Laser(std::pair<int, int> position, float direction, float speed) : Bulle
     set_speed(speed);
 }
 
-BouletteRose::BouletteRose(std::pair<int, int> position, float direction, float speed) : Bullet(position, direction, speed)
+ColoredBullet::ColoredBullet(std::pair<int, int> position, float direction, float speed, GameColor c) : Bullet(position, direction, speed)
 {
-    _sprite = new Sprite("boulette.bmp");
+	switch (c)
+	{
+	case Red:
+		_sprite = new Sprite("boulette_rouge.bmp");
+		break;
+	case Green:
+		_sprite = new Sprite("boulette_verte.bmp");
+		break;
+	case Blue:
+		_sprite = new Sprite("boulette_bleue.bmp");
+		break;
+	default:
+		_sprite = new Sprite("boulette.bmp");
+		break;
+	}
     SDL_Rect bouletteHitbox = {2, 2, 4, 4};
     _sprite->set_hitbox(bouletteHitbox);
     _sprite->set_position(position.first - _sprite->position().w / 2, position.second - _sprite->position().h / 2);

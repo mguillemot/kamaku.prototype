@@ -153,7 +153,7 @@ XStatus fetch_text_header(char *buf, char *header_string, char **destination, in
  */
 XStatus fetch_boolean_header(char *buf, char *header_string, int *destination, int mandatory)
 {
-  int i, deb, size;
+  int i, deb;
 
   i = 0;
   deb = locate_substr(buf, header_string, &i);
@@ -243,12 +243,12 @@ float read_float(char *buf, int *pos)
   if (buf[i] == '.')
   {
     i++; // on saute le point
-    dividor = 0.1;
+    dividor = 0.1f;
     while (buf[i] >= '0' && buf[i] <= '9')
     {
       digit = (buf[i] - '0');
       res += dividor * (float)digit;
-      dividor *= 0.1;
+      dividor *= 0.1f;
       i++;
     }
   }
@@ -814,7 +814,7 @@ XStatus load_level(char *buf, SMfile *sm, int level)
 XStatus load_sm(SMfile *sm, char filename[])
 {
   char *buf;
-  int filesize, i, k;
+  int filesize, k;
   XStatus status;
   FILE *infile;
 
@@ -833,7 +833,7 @@ XStatus load_sm(SMfile *sm, char filename[])
     DEBUG_USER("not enough memory !\r\n");
     return XST_FAILURE;
   }
-  infile = fopen(filename, "r");
+  fopen_s(&infile, filename, "r");
   if (! infile)
   {
     DEBUG_USER("file not found !\r\n");
