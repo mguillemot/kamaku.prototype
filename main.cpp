@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
         exit(-1);
     }
     
-    screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_SWSURFACE);
+    screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 16, SDL_SWSURFACE);
     if (screen == NULL)
     {
         fprintf(stderr, "Couldn't set required video mode: %s\n",
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
     SDL_WM_SetCaption("Kamaku", NULL);
-    
+
     Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096);
     music = Mix_LoadMUS("justice.wav");
     collision = Mix_LoadWAV("hit.wav");
