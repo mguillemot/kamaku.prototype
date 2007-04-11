@@ -196,22 +196,22 @@ int main(int argc, char *argv[])
                     case SDLK_ESCAPE:
                         quit = true;
                         break;
-                    case SDLK_UP:
+                    case SDLK_e:
                         move_up = true;
                         break;
-                    case SDLK_DOWN:
+                    case SDLK_d:
                         move_down = true;
                         break;
-                    case SDLK_LEFT:
+                    case SDLK_s:
                         move_left = true;
                         break;
-                    case SDLK_RIGHT:
+                    case SDLK_f:
                         move_right = true;
                         break;
                     case SDLK_h:
                         show_hitbox = !show_hitbox;
                         break;
-                    case SDLK_m:
+                    case SDLK_o:
                         if (Mix_PausedMusic())
                         {
                             Mix_ResumeMusic();
@@ -221,16 +221,16 @@ int main(int argc, char *argv[])
                             Mix_PauseMusic();
                         }
                         break;
-                    case SDLK_l:
+                    case SDLK_p:
                         sound = !sound;
                         break;
-                    case SDLK_s:
+                    case SDLK_j:
                         button1 = true;
                         break;
-                    case SDLK_d:
+                    case SDLK_k:
                         button2 = true;
                         break;
-					case SDLK_f:
+					case SDLK_l:
 						button3 = true;
 						break;
                 }                         
@@ -239,25 +239,25 @@ int main(int argc, char *argv[])
             {
                 switch (event.key.keysym.sym)
                 {
-                    case SDLK_UP:
+                    case SDLK_e:
                         move_up = false;
                         break;
-                    case SDLK_DOWN:
+                    case SDLK_d:
                         move_down = false;
                         break;
-                    case SDLK_LEFT:
+                    case SDLK_s:
                         move_left = false;
                         break;
-                    case SDLK_RIGHT:
+                    case SDLK_f:
                         move_right = false;
                         break;
-                    case SDLK_s:
+                    case SDLK_j:
                         button1 = false;
                         break;
-                    case SDLK_d:
+                    case SDLK_k:
                         button2 = false;
                         break;
-					case SDLK_f:
+					case SDLK_l:
 						button3 = false;
 						break;
                 }                         
